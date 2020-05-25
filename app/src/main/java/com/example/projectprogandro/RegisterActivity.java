@@ -70,7 +70,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void loginNow(){
         TextView textViewCreateAccount = findViewById(R.id.textHadAccount);
-        textViewCreateAccount.setText(fromHtml("<font color='#000000'>Already have Account ?. </font><font color='#0c0099'>Login now</font>"));
+        textViewCreateAccount.setText(fromHtml("<font color='#000000'>Already have Account? </font><font color='#0c0099'>Login now</font>"));
         textViewCreateAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

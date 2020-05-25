@@ -4,63 +4,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#3DB179"
     tools:context=".RegisterActivity">
 
     <TextView
         android:id="@+id/textLabelSign"
-        android:layout_width="79dp"
-        android:layout_height="37dp"
-        android:text="@string/sign_up"
-        android:textSize="20sp"
+        android:layout_width="197dp"
+        android:layout_height="35dp"
+        android:text="Sign Up"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/textEmailReg"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.298"
+        app:layout_constraintHorizontal_bias="0.818"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.803"
+        app:layout_constraintVertical_bias="0.217"
         tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/textEmailReg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="213dp"
+        android:layout_height="49dp"
         android:layout_marginTop="148dp"
         android:autofillHints="Tidak Boleh Kosong"
+        android:background="@drawable/rounded_textview"
         android:ems="10"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toTopOf="@+id/textPasswordReg"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.225"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.793"
+        tools:ignore="MissingConstraints"
+        android:drawableStart="@drawable/ic_email_black_24dp"/>
 
     <EditText
         android:id="@+id/textPasswordReg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="213dp"
+        android:layout_height="53dp"
         android:autofillHints="Tidak Boleh Kosong"
+        android:background="@drawable/rounded_textview"
+        android:drawableStart="@drawable/ic_lock_black_24dp"
         android:ems="10"
         android:hint="@string/password"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.32" />
+        app:layout_constraintVertical_bias="0.499" />
 
     <Button
         android:id="@+id/btnRegis"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="209dp"
+        android:layout_height="57dp"
         android:text="@string/sign_up"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.693"
+        app:layout_constraintHorizontal_bias="0.519"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textPasswordReg"
-        app:layout_constraintVertical_bias="0.077" />
+        app:layout_constraintVertical_bias="0.13"
+        android:background="#EA5656"/>
 
     <TextView
         android:id="@+id/textHadAccount"
@@ -70,9 +79,19 @@
         android:text="@string/already_have_account_login_now"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnRegis"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.082" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="95dp"
+        android:layout_height="243dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="144dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/train" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

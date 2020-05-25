@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ProjectProgAndro</string>
+    <string name="app_name">E-Ticket Kereta</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="not_a_member_sign_in_now">Not a Member ? Sign in Now</string>
