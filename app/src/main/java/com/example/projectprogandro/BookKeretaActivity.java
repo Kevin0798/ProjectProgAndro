@@ -28,11 +28,11 @@ public class BookKeretaActivity extends AppCompatActivity {
     SQLiteDatabase db;
     Spinner spinAsal, spinTujuan, spinDewasa, spinAnak;
     String email;
-    int id_book;
+  //  int id_book;
     public String sAsal, sTujuan, sTanggal, sDewasa, sAnak;
-    int jmlDewasa, jmlAnak;
-    int hargaDewasa, hargaAnak;
-    int hargaTotalDewasa, hargaTotalAnak, hargaTotal;
+  //  int jmlDewasa, jmlAnak;
+  //  int hargaDewasa, hargaAnak;
+  //  int hargaTotalDewasa, hargaTotalAnak, hargaTotal;
     private EditText etTanggal;
     private DatePickerDialog dpTanggal;
     Calendar newCalendar = Calendar.getInstance();
@@ -119,53 +119,32 @@ public class BookKeretaActivity extends AppCompatActivity {
         });
 
         Button btnBook = findViewById(R.id.book);
-
         etTanggal = findViewById(R.id.tanggal_berangkat);
         etTanggal.setInputType(InputType.TYPE_NULL);
         etTanggal.requestFocus();
-        // session = new SessionManager(getApplicationContext());
-        // HashMap<String, String> user = session.getUserDetails();
-        // email = user.get(SessionManager.KEY_EMAIL);
         setDateTimeField();
 
         btnBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 perhitunganHarga();
-                if (sAsal != null && sTujuan != null && sTanggal != null && sDewasa != null) {
+                if (sAsal != null && sTujuan != null && sTanggal != null && sDewasa != null && sAnak !=null ) {
                     if ((sAsal.equalsIgnoreCase("jakarta") && sTujuan.equalsIgnoreCase("jakarta"))
                             || (sAsal.equalsIgnoreCase("bandung") && sTujuan.equalsIgnoreCase("bandung"))
                             || (sAsal.equalsIgnoreCase("purwokerto") && sTujuan.equalsIgnoreCase("purwokerto"))
                             || (sAsal.equalsIgnoreCase("yogyakarta") && sTujuan.equalsIgnoreCase("yogyakarta"))
                             || (sAsal.equalsIgnoreCase("surabaya") && sTujuan.equalsIgnoreCase("surabaya"))) {
                         Toast.makeText(BookKeretaActivity.this, "Asal dan Tujuan tidak boleh sama !", Toast.LENGTH_LONG).show();
-                    } else {
+                    }
+                    else
+                        {
                         AlertDialog dialog = new AlertDialog.Builder(BookKeretaActivity.this)
                                 .setTitle("Ingin booking kereta sekarang?")
                                 .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
                                         try {
-                                            db.execSQL("INSERT INTO TB_BOOK (asal, tujuan, tanggal, dewasa, anak) VALUES ('" +
-                                                    sAsal + "','" +
-                                                    sTujuan + "','" +
-                                                    sTanggal + "','" +
-                                                    sDewasa + "','" +
-                                                    sAnak + "');");
-                                            cursor = db.rawQuery("SELECT id_book FROM TB_BOOK ORDER BY id_book DESC", null);
-                                            cursor.moveToLast();
-                                            if (cursor.getCount() > 0) {
-                                                cursor.moveToPosition(0);
-                                                id_book = cursor.getInt(0);
-                                            }
-                                            db.execSQL("INSERT INTO TB_HARGA (username, id_book, harga_dewasa, harga_anak, harga_total) VALUES ('" +
-                                                    email + "','" +
-                                                    id_book + "','" +
-                                                    hargaTotalDewasa + "','" +
-                                                    hargaTotalAnak + "','" +
-                                                    hargaTotal + "');");
-                                            Toast.makeText(BookKeretaActivity.this, "Booking berhasil", Toast.LENGTH_LONG).show();
-                                            finish();
+
                                         } catch (Exception e) {
                                             Toast.makeText(BookKeretaActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
                                         }
@@ -181,16 +160,9 @@ public class BookKeretaActivity extends AppCompatActivity {
             }
         });
 
-        //   setupToolbar();
 
     }
 
-    //private void setupToolbar() {
-    // Toolbar toolbar = findViewById(R.id.tbKrl);
-    //  toolbar.setTitle("Form Booking");
-    //  setSupportActionBar(toolbar);
-    //  getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    // }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -202,74 +174,7 @@ public class BookKeretaActivity extends AppCompatActivity {
     }
 
     public void perhitunganHarga() {
-        if (sAsal.equalsIgnoreCase("jakarta") && sTujuan.equalsIgnoreCase("bandung")) {
-            hargaDewasa = 100000;
-            hargaAnak = 70000;
-        } else if (sAsal.equalsIgnoreCase("jakarta") && sTujuan.equalsIgnoreCase("surabaya")) {
-            hargaDewasa = 200000;
-            hargaAnak = 150000;
-        } else if (sAsal.equalsIgnoreCase("jakarta") && sTujuan.equalsIgnoreCase("purwokerto")) {
-            hargaDewasa = 150000;
-            hargaAnak = 120000;
-        } else if (sAsal.equalsIgnoreCase("jakarta") && sTujuan.equalsIgnoreCase("yogyakarta")) {
-            hargaDewasa = 180000;
-            hargaAnak = 140000;
-        } else if (sAsal.equalsIgnoreCase("bandung") && sTujuan.equalsIgnoreCase("jakarta")) {
-            hargaDewasa = 100000;
-            hargaAnak = 70000;
-        } else if (sAsal.equalsIgnoreCase("bandung") && sTujuan.equalsIgnoreCase("surabaya")) {
-            hargaDewasa = 120000;
-            hargaAnak = 100000;
-        } else if (sAsal.equalsIgnoreCase("bandung") && sTujuan.equalsIgnoreCase("purwokerto")) {
-            hargaDewasa = 120000;
-            hargaAnak = 90000;
-        } else if (sAsal.equalsIgnoreCase("bandung") && sTujuan.equalsIgnoreCase("yogyakarta")) {
-            hargaDewasa = 190000;
-            hargaAnak = 160000;
-        } else if (sAsal.equalsIgnoreCase("surabaya") && sTujuan.equalsIgnoreCase("jakarta")) {
-            hargaDewasa = 200000;
-            hargaAnak = 150000;
-        } else if (sAsal.equalsIgnoreCase("surabaya") && sTujuan.equalsIgnoreCase("bandung")) {
-            hargaDewasa = 120000;
-            hargaAnak = 100000;
-        } else if (sAsal.equalsIgnoreCase("surabaya") && sTujuan.equalsIgnoreCase("purwokerto")) {
-            hargaDewasa = 170000;
-            hargaAnak = 130000;
-        } else if (sAsal.equalsIgnoreCase("surabaya") && sTujuan.equalsIgnoreCase("yogyakarta")) {
-            hargaDewasa = 180000;
-            hargaAnak = 150000;
-        } else if (sAsal.equalsIgnoreCase("purwokerto") && sTujuan.equalsIgnoreCase("jakarta")) {
-            hargaDewasa = 150000;
-            hargaAnak = 120000;
-        } else if (sAsal.equalsIgnoreCase("purwokerto") && sTujuan.equalsIgnoreCase("bandung")) {
-            hargaDewasa = 120000;
-            hargaAnak = 90000;
-        } else if (sAsal.equalsIgnoreCase("purwokerto") && sTujuan.equalsIgnoreCase("yogyakarta")) {
-            hargaDewasa = 80000;
-            hargaAnak = 40000;
-        } else if (sAsal.equalsIgnoreCase("purwokerto") && sTujuan.equalsIgnoreCase("surabaya")) {
-            hargaDewasa = 170000;
-            hargaAnak = 130000;
-        } else if (sAsal.equalsIgnoreCase("yogyakarta") && sTujuan.equalsIgnoreCase("jakarta")) {
-            hargaDewasa = 180000;
-            hargaAnak = 140000;
-        } else if (sAsal.equalsIgnoreCase("yogyakarta") && sTujuan.equalsIgnoreCase("bandung")) {
-            hargaDewasa = 190000;
-            hargaAnak = 160000;
-        } else if (sAsal.equalsIgnoreCase("yogyakarta") && sTujuan.equalsIgnoreCase("purwokerto")) {
-            hargaDewasa = 80000;
-            hargaAnak = 40000;
-        } else if (sAsal.equalsIgnoreCase("yogyakarta") && sTujuan.equalsIgnoreCase("surabaya")) {
-            hargaDewasa = 180000;
-            hargaAnak = 150000;
-        }
 
-        jmlDewasa = Integer.parseInt(sDewasa);
-        jmlAnak = Integer.parseInt(sAnak);
-
-        hargaTotalDewasa = jmlDewasa * hargaDewasa;
-        hargaTotalAnak = jmlAnak * hargaAnak;
-        hargaTotal = hargaTotalDewasa + hargaTotalAnak;
     }
 
     private void setDateTimeField() {
