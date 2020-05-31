@@ -71,6 +71,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
     private void signInNow(){
         TextView textViewCreateAccount = findViewById(R.id.textCreateAcc);
         textViewCreateAccount.setText(fromHtml("<font color='#000000'>Are you new here? </font><font color='#0c0099'>Sign Up</font>"));

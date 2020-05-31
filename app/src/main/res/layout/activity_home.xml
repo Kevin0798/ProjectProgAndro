@@ -21,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="30.5dp"
-        android:id="@+id/tvEmail"
+        android:id="@+id/userName"
         android:textSize="15sp"
         android:textColor="#FFFFFF"/>
 
