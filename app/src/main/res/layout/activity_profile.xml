@@ -5,63 +5,61 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#3DB179"
-    tools:context=".ProfileActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".ProfileActivity">
 
     <TextView
         android:id="@+id/sambutan"
-        android:layout_width="258dp"
-        android:layout_height="74dp"
-        android:layout_marginTop="4dp"
-        android:paddingLeft="30dp"
-        android:paddingTop="20dp"
+        android:layout_width="86dp"
+        android:layout_height="32dp"
         android:text="Profile"
         android:textColor="#FFFFFF"
         android:textSize="25dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/emailProfile"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.082"
+        app:layout_constraintHorizontal_bias="0.061"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.127" />
+        app:layout_constraintVertical_bias="0.063" />
 
     <ImageView
         android:id="@+id/imageProfile"
-        android:layout_width="107dp"
-        android:layout_height="109dp"
+        android:layout_width="84dp"
+        android:layout_height="84dp"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="556dp"
+        android:layout_marginTop="12dp"
         android:src="@drawable/user"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sambutan"
-        app:layout_constraintVertical_bias="0.671" />
+        app:layout_constraintVertical_bias="0.007" />
 
-    <EditText
+    <TextView
         android:id="@+id/emailProfile"
-        android:layout_width="293dp"
-        android:layout_height="61dp"
+        android:layout_width="245dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.673"
-        app:layout_constraintStart_toEndOf="@+id/imgProfile"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.214"
+        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintStart_toEndOf="@+id/imageProfile"
+        app:layout_constraintTop_toBottomOf="@+id/fullName"
+        app:layout_constraintVertical_bias="0.003"
         tools:ignore="MissingConstraints" />
 
-    <EditText
+    <TextView
         android:id="@+id/fullName"
-        android:layout_width="293dp"
-        android:layout_height="61dp"
-        android:layout_marginBottom="564dp"
+        android:layout_width="188dp"
+        android:layout_height="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.673"
-        app:layout_constraintStart_toEndOf="@+id/imgProfile"
-        app:layout_constraintTop_toBottomOf="@+id/emailProfile"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.243"
+        app:layout_constraintStart_toEndOf="@+id/imageProfile"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.173"
         tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -58,6 +58,7 @@ public class HomeActivity extends AppCompatActivity {
                         .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
+                                FirebaseAuth.getInstance().signOut();
                                 finish();
                             }
                         })
@@ -66,6 +67,8 @@ public class HomeActivity extends AppCompatActivity {
                 dialog.show();
             }
         });
+
+
     }
 
 
