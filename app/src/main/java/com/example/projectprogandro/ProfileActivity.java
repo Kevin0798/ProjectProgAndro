@@ -30,6 +30,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         fauth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
+
         userId = fauth.getCurrentUser().getUid();
 
         DocumentReference documentReference = fstore.collection("users").document(userId);

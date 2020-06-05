@@ -1,5 +1,6 @@
 package com.example.projectprogandro;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
@@ -8,6 +9,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.InputType;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,57 +20,82 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Objects;
 
 public class BookKeretaActivity extends AppCompatActivity {
 
-
+    FirebaseFirestore fstore;
+    String keId;
     protected Cursor cursor;
+    FirebaseAuth fauth;
     SQLiteDatabase db;
+    FirebaseDatabase firebaseDatabase;
     Spinner spinAsal, spinTujuan, spinDewasa, spinAnak;
     String email;
-  //  int id_book;
+
     public String sAsal, sTujuan, sTanggal, sDewasa, sAnak;
-  //  int jmlDewasa, jmlAnak;
-  //  int hargaDewasa, hargaAnak;
-  //  int hargaTotalDewasa, hargaTotalAnak, hargaTotal;
+
     private EditText etTanggal;
     private DatePickerDialog dpTanggal;
     Calendar newCalendar = Calendar.getInstance();
+    private DocumentReference documentReference;
+    DatabaseReference databaseReference;
+    DatabaseReference dtbs;
+    ValueEventListener valueEventListener;
+    ArrayAdapter<String> arrayAdapter;
+    ArrayList<String> SpinnerDataList;
 
-
+    ValueEventListener valueEventListener2;
+    ArrayAdapter<String> arrayAdapter2;
+    ArrayList<String> spinnerList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_kereta);
-
-
-        final String[] asal = {"Jakarta", "Bandung", "Purwokerto", "Yogyakarta", "Surabaya"};
-        final String[] tujuan = {"Jakarta", "Bandung", "Purwokerto", "Yogyakarta", "Surabaya"};
-        final String[] dewasa = {"0", "1", "2", "3", "4", "5"};
-        final String[] anak = {"0", "1", "2", "3", "4", "5"};
+        fstore = FirebaseFirestore.getInstance();
 
         spinAsal = findViewById(R.id.asal);
         spinTujuan = findViewById(R.id.tujuan);
         spinDewasa = findViewById(R.id.dewasa);
         spinAnak = findViewById(R.id.anak);
 
-        ArrayAdapter<CharSequence> adapterAsal = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item, asal);
-        adapterAsal.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinAsal.setAdapter(adapterAsal);
+        databaseReference = FirebaseDatabase.getInstance().getReference("Destination");
+        dtbs = FirebaseDatabase.getInstance().getReference("From");
 
-        ArrayAdapter<CharSequence> adapterTujuan = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item, tujuan);
-        adapterTujuan.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinTujuan.setAdapter(adapterTujuan);
+        SpinnerDataList = new ArrayList<>();
+        arrayAdapter = new ArrayAdapter<String>(BookKeretaActivity.this, android.R.layout.simple_spinner_dropdown_item, SpinnerDataList);
+        spinAsal.setAdapter(arrayAdapter);
 
-        ArrayAdapter<CharSequence> adapterDewasa = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item, dewasa);
-        adapterDewasa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinDewasa.setAdapter(adapterDewasa);
+        spinnerList = new ArrayList<>();
+        arrayAdapter2 = new ArrayAdapter<String>(BookKeretaActivity.this, android.R.layout.simple_spinner_dropdown_item, spinnerList);
+        spinTujuan.setAdapter(arrayAdapter2);
+        retrieveDataAsal();
+        retrieveDataTujuan();
 
-        ArrayAdapter<CharSequence> adapterAnak = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item, anak);
-        adapterAnak.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinAnak.setAdapter(adapterAnak);
+
+
+
+
+
+
+
+
 
         spinAsal.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -157,6 +184,42 @@ public class BookKeretaActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(BookKeretaActivity.this, "Mohon lengkapi data pemesanan!", Toast.LENGTH_LONG).show();
                 }
+            }
+        });
+    }
+
+    private void retrieveDataAsal(){
+        valueEventListener = databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot item: dataSnapshot.getChildren()){
+                    SpinnerDataList.add(item.getValue().toString());
+
+                }
+                arrayAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    private void retrieveDataTujuan(){
+        valueEventListener2 = dtbs.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot item: dataSnapshot.getChildren()){
+                    spinnerList.add(item.getValue().toString());
+
+                }
+                arrayAdapter2.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
             }
         });
     }
