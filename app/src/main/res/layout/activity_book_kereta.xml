@@ -102,16 +102,10 @@
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/tanggal_berangkat"
-                        android:layout_width="300dp"
-                        android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/ic_date"
-                        android:drawablePadding="10dp"
-                        android:hint="Tanggal"
-                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-                        android:textColor="@color/colorPrimary"
-                        android:textColorHint="#BACBCF" />
+                 <CalendarView
+                     android:id="@+id/datePicker1"
+                     android:layout_width="300dp"
+                     android:layout_height="wrap_content"/>
 
                 </LinearLayout>
 
@@ -175,7 +169,7 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <com.google.android.material.button.MaterialButton
+            <Button
                 android:id="@+id/book"
                 android:layout_width="330dp"
                 android:layout_gravity="center"

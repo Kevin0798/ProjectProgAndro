@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.EventLog;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
@@ -16,10 +19,12 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    TextView fullname, email;
+    EditText fullname, email;
     FirebaseAuth fauth;
     FirebaseFirestore fstore;
+
     String userId;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +35,6 @@ public class ProfileActivity extends AppCompatActivity {
 
         fauth = FirebaseAuth.getInstance();
         fstore = FirebaseFirestore.getInstance();
-
         userId = fauth.getCurrentUser().getUid();
 
         DocumentReference documentReference = fstore.collection("users").document(userId);

@@ -1,5 +1,6 @@
 package com.example.projectprogandro;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,8 +8,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CalendarView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,6 +32,7 @@ public class HomeActivity extends AppCompatActivity {
     FirebaseFirestore fstore;
     Button btnLogout;
     String UserId;
+
 
 
     @Override
@@ -67,8 +71,6 @@ public class HomeActivity extends AppCompatActivity {
                 dialog.show();
             }
         });
-
-
     }
 
 
@@ -78,7 +80,6 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void profileMenu(View v) {
-        //Toast.makeText(HomeActivity.this,"Dalam Tahap Pengembangan",Toast.LENGTH_LONG).show();
         Intent i = new Intent(this, ProfileActivity.class);
         startActivity(i);
     }
@@ -88,7 +89,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void paymentMenu(View v) {
-        Toast.makeText(HomeActivity.this,"Dalam Tahap Pengembangan",Toast.LENGTH_LONG).show();
+        Intent i = new Intent(this,PaymentActivity.class);
+        startActivity(i);
     }
-
 }

@@ -25,41 +25,52 @@
 
     <ImageView
         android:id="@+id/imageProfile"
-        android:layout_width="84dp"
-        android:layout_height="84dp"
+        android:layout_width="106dp"
+        android:layout_height="93dp"
         android:layout_centerInParent="true"
         android:layout_marginTop="12dp"
         android:src="@drawable/user"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sambutan"
-        app:layout_constraintVertical_bias="0.007" />
+        app:layout_constraintVertical_bias="0.067" />
 
-    <TextView
+    <EditText
         android:id="@+id/emailProfile"
-        android:layout_width="245dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="241dp"
+        android:layout_height="54dp"
+        android:layout_marginEnd="80dp"
+        android:drawableStart="@drawable/ic_email_black_24dp"
+        android:hint="email"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.068"
-        app:layout_constraintStart_toEndOf="@+id/imageProfile"
         app:layout_constraintTop_toBottomOf="@+id/fullName"
-        app:layout_constraintVertical_bias="0.003"
+        app:layout_constraintVertical_bias="0.028"
         tools:ignore="MissingConstraints" />
 
-    <TextView
+    <EditText
         android:id="@+id/fullName"
-        android:layout_width="188dp"
-        android:layout_height="28dp"
+        android:layout_width="241dp"
+        android:layout_height="57dp"
+        android:layout_marginEnd="80dp"
+        android:drawableStart="@drawable/ic_baseline_person_24"
+        android:hint="Full name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.243"
-        app:layout_constraintStart_toEndOf="@+id/imageProfile"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.173"
+        app:layout_constraintVertical_bias="0.406"
         tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="188dp"
+        android:layout_marginEnd="136dp"
+        android:text="Update profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailProfile" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
