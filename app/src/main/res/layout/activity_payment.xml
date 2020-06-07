@@ -7,11 +7,40 @@
     tools:context=".PaymentActivity">
 
     <TextView
-        android:id="@+id/apaini"
-        android:layout_width="143dp"
-        android:layout_height="74dp"
-        android:text=""
+        android:id="@+id/textAsal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="57dp"
         tools:layout_editor_absoluteY="50dp" />
+
+    <TextView
+        android:id="@+id/texttujuan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="57dp"
+        android:layout_marginTop="50dp"
+        tools:layout_editor_absoluteY="50dp" />
+
+    <TextView
+        android:id="@+id/textdewasa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        tools:layout_editor_absoluteX="57dp"
+        tools:layout_editor_absoluteY="50dp" />
+
+    <TextView
+        android:id="@+id/textanak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        tools:layout_editor_absoluteX="57dp"
+        tools:layout_editor_absoluteY="50dp" />
+
+    <TextView
+        android:id="@+id/texttanggal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp" />
 
 </RelativeLayout>

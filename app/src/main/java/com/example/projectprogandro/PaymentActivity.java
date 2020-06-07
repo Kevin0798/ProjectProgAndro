@@ -1,36 +1,44 @@
 package com.example.projectprogandro;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.CalendarView;
-import android.widget.DatePicker;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.util.Calendar;
+import org.w3c.dom.Text;
 
 public class PaymentActivity extends AppCompatActivity {
 
-    TextView testShow;
-    //Long date;
+    TextView textAnak;
+    TextView textDewasa;
+    TextView textTanggal;
+    TextView textAsal;
+    TextView textTujuan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
 
+        TextView textAnak = (TextView)findViewById(R.id.textanak);
+        TextView textDewasa = (TextView)findViewById(R.id.textdewasa);
+        TextView textTanggal = (TextView)findViewById(R.id.texttanggal);
+        TextView textAsal = (TextView)findViewById(R.id.textAsal);
+        TextView textTujuan = (TextView)findViewById(R.id.texttujuan);
 
-        //final Long date = calendarView.getDate();
-        testShow = findViewById(R.id.apaini);
-       // testShow.setText(Math.toIntExact(date);
-        Intent IncomingIntent = getIntent();
-        String date = IncomingIntent.getStringExtra("date");
-        testShow.setText(date);
+
+        String anak = getIntent().getStringExtra("anak");
+        String dewasa = getIntent().getStringExtra("dewasa");
+        String tanggal = getIntent().getStringExtra("tanggal");
+        String asal = getIntent().getStringExtra("asal");
+        String tujuan = getIntent().getStringExtra("tujuan");
+
+
+        textAnak.setText(anak);
+        textDewasa.setText(dewasa);
+        textTanggal.setText(tanggal);
+        textAsal.setText(asal);
+        textTujuan.setText(tujuan);
+
     }
 }

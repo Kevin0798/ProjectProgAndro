@@ -87,7 +87,7 @@ public class BookKeretaActivity extends AppCompatActivity {
         spinTujuan = findViewById(R.id.tujuan);
         spinDewasa = findViewById(R.id.dewasa);
         spinAnak = findViewById(R.id.anak);
-        mCalendarView = (CalendarView) findViewById(R.id.datePicker1);
+
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Destination");
         dtbs = FirebaseDatabase.getInstance().getReference("From");
@@ -160,27 +160,22 @@ public class BookKeretaActivity extends AppCompatActivity {
         });
 
 
-        mCalendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            @Override
-            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                String date = year + "/" + month + "/" + dayOfMonth;
-                Log.d(TAG, "onSelectedDayChange: " + date);
-                intent = new Intent(BookKeretaActivity.this, PaymentActivity.class);
-                intent.putExtra("date", date);
-
-            }
-        });
-
         Button btnBook = findViewById(R.id.book);
-       /* etTanggal = findViewById(R.id.datePicker1);
+        etTanggal = findViewById(R.id.tanggal_berangkat);
         etTanggal.setInputType(InputType.TYPE_NULL);
         etTanggal.requestFocus();
-        etDateTimeField();
-*/
+        setDateTimeField();
+
         btnBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(intent);
+                Intent i = new Intent(BookKeretaActivity.this, PaymentActivity.class);
+                i.putExtra("asal",String.valueOf(spinAsal.getSelectedItem()));
+                i.putExtra("tujuan",String.valueOf(spinTujuan.getSelectedItem()));
+                i.putExtra("anak",String.valueOf(spinAnak.getSelectedItemId()));
+                i.putExtra("dewasa",String.valueOf(spinDewasa.getSelectedItem()));
+                i.putExtra("tanggal",sTanggal);
+                startActivity(i);
             }
         });
 
@@ -229,11 +224,7 @@ public class BookKeretaActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void perhitunganHarga() {
-
-    }
-
-    /*private void setDateTimeField() {
+    private void setDateTimeField() {
         etTanggal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -253,6 +244,5 @@ public class BookKeretaActivity extends AppCompatActivity {
             }
         }, newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
     }
-    */
 
 }
