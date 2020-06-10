@@ -81,8 +81,8 @@ public class RefundActivity extends AppCompatActivity {
            @Override
            public void onClick(View v) {
                AlertDialog dialog = new AlertDialog.Builder(RefundActivity.this)
-                       .setTitle("Your ticket has been refunded")
-                       .setPositiveButton("ok", new DialogInterface.OnClickListener(){
+                       .setTitle("Apakah anda yakin ingin refund?")
+                       .setPositiveButton("Iya", new DialogInterface.OnClickListener(){
                            @Override
                            public void onClick(DialogInterface dialog, int which) {
                                DatabaseReference refund = FirebaseDatabase.getInstance().getReference("UserPayment");
@@ -90,6 +90,7 @@ public class RefundActivity extends AppCompatActivity {
                                startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                            }
                        })
+                       .setNegativeButton("Tidak", null)
                        .create();
                dialog.show();
            }
