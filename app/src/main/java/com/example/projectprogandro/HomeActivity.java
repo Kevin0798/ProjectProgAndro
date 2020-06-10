@@ -89,7 +89,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void paymentMenu(View v) {
-        Intent i = new Intent(this,PaymentActivity.class);
+        Intent i = new Intent(this,ListOfPayment.class);
         startActivity(i);
     }
 }

@@ -7,4 +7,6 @@
     <string name="sign_up">Sign Up</string>
     <string name="already_have_account_login_now">Already have Account ? Login Now</string>
     <string name="hello_world">Hello World</string>
+    <string name="payment">Payment</string>
+    <string name="bayar">Bayar</string>
 </resources>

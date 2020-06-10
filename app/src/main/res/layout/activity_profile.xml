@@ -41,24 +41,24 @@
         android:id="@+id/emailProfile"
         android:layout_width="241dp"
         android:layout_height="54dp"
-        android:layout_marginEnd="80dp"
         android:drawableStart="@drawable/ic_email_black_24dp"
         android:hint="email"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fullName"
-        app:layout_constraintVertical_bias="0.028"
+        app:layout_constraintVertical_bias="0.089"
         tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/fullName"
         android:layout_width="241dp"
         android:layout_height="57dp"
-        android:layout_marginEnd="80dp"
         android:drawableStart="@drawable/ic_baseline_person_24"
         android:hint="Full name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.406"
         tools:ignore="MissingConstraints" />
@@ -67,10 +67,13 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="188dp"
-        android:layout_marginEnd="136dp"
+        android:layout_marginTop="56dp"
         android:text="Update profile"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailProfile" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailProfile"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

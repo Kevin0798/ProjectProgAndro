@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3DB179"
+    tools:context=".ListOfPayment">
+
+<!--    <TextView
+        android:id="@+id/txtTjuan"
+        android:layout_width="108dp"
+        android:layout_height="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.12"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/txtAsl"
+        android:layout_width="108dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="22dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTjuan"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/txtDate"
+        android:layout_width="108dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="516dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtAsl"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/txtDwsa"
+        android:layout_width="108dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="23dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDate"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/txtHrga"
+        android:layout_width="108dp"
+        android:layout_height="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtAnk"
+        app:layout_constraintVertical_bias="0.076"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/txtAnk"
+        android:layout_width="108dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDwsa"
+        app:layout_constraintVertical_bias="0.009"
+        tools:ignore="MissingConstraints" />-->
+
+    <ListView
+        android:id="@+id/listData"
+        android:layout_width="336dp"
+        android:layout_height="424dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

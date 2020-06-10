@@ -51,7 +51,7 @@ public class BookKeretaActivity extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     Spinner spinAsal, spinTujuan, spinDewasa, spinAnak;
     String email;
-
+    String harga1;
     public String sAsal, sTujuan, sTanggal, sDewasa, sAnak;
 
     private EditText etTanggal;
@@ -70,8 +70,8 @@ public class BookKeretaActivity extends AppCompatActivity {
     private static final String TAG = "CalendarActivity";
     private CalendarView mCalendarView;
     Intent intent;
-
     TextView showDate;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -159,23 +159,207 @@ public class BookKeretaActivity extends AppCompatActivity {
             }
         });
 
-
+        //final String harga = spinDewasa.getSelectedItem().toString();
         Button btnBook = findViewById(R.id.book);
         etTanggal = findViewById(R.id.tanggal_berangkat);
         etTanggal.setInputType(InputType.TYPE_NULL);
         etTanggal.requestFocus();
         setDateTimeField();
 
+
         btnBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(BookKeretaActivity.this, PaymentActivity.class);
-                i.putExtra("asal",String.valueOf(spinAsal.getSelectedItem()));
-                i.putExtra("tujuan",String.valueOf(spinTujuan.getSelectedItem()));
-                i.putExtra("anak",String.valueOf(spinAnak.getSelectedItemId()));
-                i.putExtra("dewasa",String.valueOf(spinDewasa.getSelectedItem()));
-                i.putExtra("tanggal",sTanggal);
-                startActivity(i);
+                Intent listPayment = new Intent(BookKeretaActivity.this, ListOfPayment.class);
+                if (spinDewasa.getSelectedItem().toString().equals("1")) {
+                    harga1 = "250.000";
+                    i.putExtra("Harga", harga1);
+                    i.putExtra("asal", String.valueOf(spinAsal.getSelectedItem()));
+                    i.putExtra("tujuan", String.valueOf(spinTujuan.getSelectedItem()));
+                    i.putExtra("anak", String.valueOf(spinAnak.getSelectedItemId()));
+                    i.putExtra("dewasa", String.valueOf(spinDewasa.getSelectedItem()));
+                    i.putExtra("tanggal", sTanggal);
+                    startActivity(i);
+
+                }
+                if (spinDewasa.getSelectedItem().toString().equals("2")) {
+                    harga1 = "500.000";
+                    i.putExtra("Harga", harga1);
+                    i.putExtra("asal", String.valueOf(spinAsal.getSelectedItem()));
+                    i.putExtra("tujuan", String.valueOf(spinTujuan.getSelectedItem()));
+                    i.putExtra("anak", String.valueOf(spinAnak.getSelectedItemId()));
+                    i.putExtra("dewasa", String.valueOf(spinDewasa.getSelectedItem()));
+                    i.putExtra("tanggal", sTanggal);
+                    startActivity(i);
+
+                }
+                if (spinDewasa.getSelectedItem().toString().equals("3")) {
+                    harga1 = "750.000";
+                    i.putExtra("Harga", harga1);
+                    i.putExtra("asal", String.valueOf(spinAsal.getSelectedItem()));
+                    i.putExtra("tujuan", String.valueOf(spinTujuan.getSelectedItem()));
+                    i.putExtra("anak", String.valueOf(spinAnak.getSelectedItemId()));
+                    i.putExtra("dewasa", String.valueOf(spinDewasa.getSelectedItem()));
+                    i.putExtra("tanggal", sTanggal);
+                    startActivity(i);
+
+                }
+                if (spinDewasa.getSelectedItem().toString().equals("4")) {
+                    harga1 = "1.000.000";
+                    i.putExtra("Harga", harga1);
+                    i.putExtra("asal", String.valueOf(spinAsal.getSelectedItem()));
+                    i.putExtra("tujuan", String.valueOf(spinTujuan.getSelectedItem()));
+                    i.putExtra("anak", String.valueOf(spinAnak.getSelectedItemId()));
+                    i.putExtra("dewasa", String.valueOf(spinDewasa.getSelectedItem()));
+                    i.putExtra("tanggal", sTanggal);
+                    startActivity(i);
+
+                }if(spinDewasa.getSelectedItem().toString().equals("5")){
+                    harga1 = "1.250.000";
+                    i.putExtra("Harga", harga1);
+                    i.putExtra("asal", String.valueOf(spinAsal.getSelectedItem()));
+                    i.putExtra("tujuan", String.valueOf(spinTujuan.getSelectedItem()));
+                    i.putExtra("anak", String.valueOf(spinAnak.getSelectedItemId()));
+                    i.putExtra("dewasa", String.valueOf(spinDewasa.getSelectedItem()));
+                    i.putExtra("tanggal", sTanggal);
+                    startActivity(i);
+
+                }if (spinDewasa.getSelectedItem().toString().equals("1") && spinAnak.getSelectedItem().toString().equals("1")){
+                    harga1 = "350.000";
+                    i.putExtra("Harga", harga1);
+                    i.putExtra("asal", String.valueOf(spinAsal.getSelectedItem()));
+                    i.putExtra("tujuan", String.valueOf(spinTujuan.getSelectedItem()));
+                    i.putExtra("anak", String.valueOf(spinAnak.getSelectedItemId()));
+                    i.putExtra("dewasa", String.valueOf(spinDewasa.getSelectedItem()));
+                    i.putExtra("tanggal", sTanggal);
+                    startActivity(i);
+
+                }if (spinDewasa.getSelectedItem().toString().equals("1") && spinAnak.getSelectedItem().toString().equals("2")){
+                    harga1 = "450.000";
+                    i.putExtra("Harga", harga1);
+                    i.putExtra("asal", String.valueOf(spinAsal.getSelectedItem()));
+                    i.putExtra("tujuan", String.valueOf(spinTujuan.getSelectedItem()));
+                    i.putExtra("anak", String.valueOf(spinAnak.getSelectedItemId()));
+                    i.putExtra("dewasa", String.valueOf(spinDewasa.getSelectedItem()));
+                    i.putExtra("tanggal", sTanggal);
+                    startActivity(i);
+
+                }if (spinDewasa.getSelectedItem().toString().equals("1") && spinAnak.getSelectedItem().toString().equals("3")){
+                    harga1 = "550.000";
+                    i.putExtra("Harga", harga1);
+                    i.putExtra("asal", String.valueOf(spinAsal.getSelectedItem()));
+                    i.putExtra("tujuan", String.valueOf(spinTujuan.getSelectedItem()));
+                    i.putExtra("anak", String.valueOf(spinAnak.getSelectedItemId()));
+                    i.putExtra("dewasa", String.valueOf(spinDewasa.getSelectedItem()));
+                    i.putExtra("tanggal", sTanggal);
+                    startActivity(i);
+
+                }if (spinDewasa.getSelectedItem().toString().equals("1") && spinAnak.getSelectedItem().toString().equals("4")){
+                    harga1 = "650.000";
+                    i.putExtra("Harga", harga1);
+                    i.putExtra("asal", String.valueOf(spinAsal.getSelectedItem()));
+                    i.putExtra("tujuan", String.valueOf(spinTujuan.getSelectedItem()));
+                    i.putExtra("anak", String.valueOf(spinAnak.getSelectedItemId()));
+                    i.putExtra("dewasa", String.valueOf(spinDewasa.getSelectedItem()));
+                    i.putExtra("tanggal", sTanggal);
+                    startActivity(i);
+
+                }if (spinDewasa.getSelectedItem().toString().equals("1") && spinAnak.getSelectedItem().toString().equals("5")){
+                    harga1 = "750.000";
+                    i.putExtra("Harga", harga1);
+                    i.putExtra("asal", String.valueOf(spinAsal.getSelectedItem()));
+                    i.putExtra("tujuan", String.valueOf(spinTujuan.getSelectedItem()));
+                    i.putExtra("anak", String.valueOf(spinAnak.getSelectedItemId()));
+                    i.putExtra("dewasa", String.valueOf(spinDewasa.getSelectedItem()));
+                    i.putExtra("tanggal", sTanggal);
+                    startActivity(i);
+
+                }if (spinDewasa.getSelectedItem().toString().equals("2") && spinAnak.getSelectedItem().toString().equals("1")){
+                    harga1 = "600.000";
+                    i.putExtra("Harga", harga1);
+                    i.putExtra("asal", String.valueOf(spinAsal.getSelectedItem()));
+                    i.putExtra("tujuan", String.valueOf(spinTujuan.getSelectedItem()));
+                    i.putExtra("anak", String.valueOf(spinAnak.getSelectedItemId()));
+                    i.putExtra("dewasa", String.valueOf(spinDewasa.getSelectedItem()));
+                    i.putExtra("tanggal", sTanggal);
+                    startActivity(i);
+
+                }if (spinDewasa.getSelectedItem().toString().equals("2") && spinAnak.getSelectedItem().toString().equals("2")){
+                    harga1 = "700.000";
+                    i.putExtra("Harga", harga1);
+                    i.putExtra("asal", String.valueOf(spinAsal.getSelectedItem()));
+                    i.putExtra("tujuan", String.valueOf(spinTujuan.getSelectedItem()));
+                    i.putExtra("anak", String.valueOf(spinAnak.getSelectedItemId()));
+                    i.putExtra("dewasa", String.valueOf(spinDewasa.getSelectedItem()));
+                    i.putExtra("tanggal", sTanggal);
+                    startActivity(i);
+
+                }if (spinDewasa.getSelectedItem().toString().equals("2") && spinAnak.getSelectedItem().toString().equals("3")){
+                    harga1 = "800.000";
+                    i.putExtra("Harga", harga1);
+                    i.putExtra("asal", String.valueOf(spinAsal.getSelectedItem()));
+                    i.putExtra("tujuan", String.valueOf(spinTujuan.getSelectedItem()));
+                    i.putExtra("anak", String.valueOf(spinAnak.getSelectedItemId()));
+                    i.putExtra("dewasa", String.valueOf(spinDewasa.getSelectedItem()));
+                    i.putExtra("tanggal", sTanggal);
+                    startActivity(i);
+
+                }if (spinDewasa.getSelectedItem().toString().equals("2") && spinAnak.getSelectedItem().toString().equals("4")){
+                    harga1 = "900.000";
+                    i.putExtra("Harga", harga1);
+                    i.putExtra("asal", String.valueOf(spinAsal.getSelectedItem()));
+                    i.putExtra("tujuan", String.valueOf(spinTujuan.getSelectedItem()));
+                    i.putExtra("anak", String.valueOf(spinAnak.getSelectedItemId()));
+                    i.putExtra("dewasa", String.valueOf(spinDewasa.getSelectedItem()));
+                    i.putExtra("tanggal", sTanggal);
+                    startActivity(i);
+
+                }if (spinDewasa.getSelectedItem().toString().equals("2") && spinAnak.getSelectedItem().toString().equals("5")){
+                    harga1 = "1.000.000";
+                    i.putExtra("Harga", harga1);
+                    i.putExtra("asal", String.valueOf(spinAsal.getSelectedItem()));
+                    i.putExtra("tujuan", String.valueOf(spinTujuan.getSelectedItem()));
+                    i.putExtra("anak", String.valueOf(spinAnak.getSelectedItemId()));
+                    i.putExtra("dewasa", String.valueOf(spinDewasa.getSelectedItem()));
+                    i.putExtra("tanggal", sTanggal);
+                    startActivity(i);
+
+                }if (spinDewasa.getSelectedItem().toString().equals("3") && spinAnak.getSelectedItem().toString().equals("1")){
+                    harga1 = "850.000";
+                    i.putExtra("Harga", harga1);
+                    i.putExtra("asal", String.valueOf(spinAsal.getSelectedItem()));
+                    i.putExtra("tujuan", String.valueOf(spinTujuan.getSelectedItem()));
+                    i.putExtra("anak", String.valueOf(spinAnak.getSelectedItemId()));
+                    i.putExtra("dewasa", String.valueOf(spinDewasa.getSelectedItem()));
+                    i.putExtra("tanggal", sTanggal);
+                    startActivity(i);
+
+                }
+                if (spinDewasa.getSelectedItem().toString().equals("3") && spinAnak.getSelectedItem().toString().equals("2")){
+                    harga1 = "950.000";
+                    i.putExtra("Harga", harga1);
+                    i.putExtra("asal", String.valueOf(spinAsal.getSelectedItem()));
+                    i.putExtra("tujuan", String.valueOf(spinTujuan.getSelectedItem()));
+                    i.putExtra("anak", String.valueOf(spinAnak.getSelectedItemId()));
+                    i.putExtra("dewasa", String.valueOf(spinDewasa.getSelectedItem()));
+                    i.putExtra("tanggal", sTanggal);
+                    startActivity(i);
+
+                }if (spinDewasa.getSelectedItem().toString().equals("3") && spinAnak.getSelectedItem().toString().equals("3")){
+                    harga1 = "1.050.000";
+                    i.putExtra("Harga", harga1);
+                    i.putExtra("asal", String.valueOf(spinAsal.getSelectedItem()));
+                    i.putExtra("tujuan", String.valueOf(spinTujuan.getSelectedItem()));
+                    i.putExtra("anak", String.valueOf(spinAnak.getSelectedItemId()));
+                    i.putExtra("dewasa", String.valueOf(spinDewasa.getSelectedItem()));
+                    i.putExtra("tanggal", sTanggal);
+                    startActivity(i);
+
+                }
+
+
+
             }
         });
 
