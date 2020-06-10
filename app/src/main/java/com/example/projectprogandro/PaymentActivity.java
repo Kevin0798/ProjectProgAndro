@@ -33,6 +33,8 @@ public class PaymentActivity extends AppCompatActivity {
     String asal = "";
     String tujuan = "";
     String harga1 = "";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,10 +55,6 @@ public class PaymentActivity extends AppCompatActivity {
         harga1 = getIntent().getStringExtra("Harga");
 
         databaseReference = FirebaseDatabase.getInstance().getReference("UserPayment");
-
-
-
-
 
         textAnak.setText(anak);
         textDewasa.setText(dewasa);

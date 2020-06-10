@@ -23,16 +23,9 @@ public class ListOfPayment extends AppCompatActivity {
     DatabaseReference databaseReference;
     DatabaseReference dtbs;
     ValueEventListener valueEventListener2;
-    ArrayList<String> adult;
-    ArrayList<String> kids;
-    ArrayList<String> kalender;
-    ArrayList<String> cost;
-    ArrayList<String> to;
-    ArrayList<String> ke;
     ListView listView;
     ArrayAdapter<String> tampungan;
     ArrayList<String> arrayList = new ArrayList<>();
-    FirebaseDatabase firebaseDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

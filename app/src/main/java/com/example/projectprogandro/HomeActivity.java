@@ -85,7 +85,8 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void refund(View v) {
-        Toast.makeText(HomeActivity.this,"Dalam Tahap Pengembangan",Toast.LENGTH_LONG).show();
+        Intent i = new Intent(this, RefundActivity.class);
+        startActivity(i);
     }
 
     public void paymentMenu(View v) {

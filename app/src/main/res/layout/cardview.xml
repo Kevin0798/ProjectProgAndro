@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3DB179">
+
+    <TextView
+        android:id="@+id/listanakKecil"
+        android:layout_width="245dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/listAsal"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="108dp"
+        android:layout_marginBottom="19dp" />
+
+    <TextView
+        android:id="@+id/listorangDewasa"
+        android:layout_width="243dp"
+        android:layout_height="61dp"
+        android:layout_above="@+id/listanakKecil"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="110dp"
+        android:layout_marginBottom="22dp" />
+
+    <TextView
+        android:id="@+id/listAsal"
+        android:layout_width="246dp"
+        android:layout_height="40dp"
+
+        android:layout_above="@+id/listTujuan"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="107dp"
+        android:layout_marginBottom="22dp" />
+
+    <TextView
+        android:id="@+id/listTujuan"
+        android:layout_width="247dp"
+        android:layout_height="45dp"
+
+        android:layout_above="@+id/listHarga"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="106dp"
+        android:layout_marginBottom="22dp" />
+
+    <TextView
+        android:id="@+id/listHarga"
+        android:layout_width="246dp"
+        android:layout_height="40dp"
+
+        android:layout_above="@+id/listTanngal"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="107dp"
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:id="@+id/listTanngal"
+        android:layout_width="248dp"
+        android:layout_height="39dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="104dp"
+        android:layout_marginBottom="191dp" />
+
+
+</RelativeLayout>

@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ListOfPayment"></activity>
+        <activity android:name=".RefundActivity"></activity>
+        <activity android:name=".ListOfPayment" />
         <activity android:name=".PaymentActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".BookKeretaActivity" />
