@@ -1,66 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:elevation="0dp"
     android:background="#3DB179">
 
-    <TextView
-        android:id="@+id/listanakKecil"
-        android:layout_width="245dp"
-        android:layout_height="40dp"
-        android:layout_above="@+id/listAsal"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="108dp"
-        android:layout_marginBottom="19dp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/listorangDewasa"
-        android:layout_width="243dp"
-        android:layout_height="61dp"
-        android:layout_above="@+id/listanakKecil"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="110dp"
-        android:layout_marginBottom="22dp" />
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="0dp"
+            android:src="@drawable/keretaapi" />
 
-    <TextView
-        android:id="@+id/listAsal"
-        android:layout_width="246dp"
-        android:layout_height="40dp"
+        <TextView
+            android:id="@+id/refund_tujuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="11dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Tujuan"
+            android:textSize="16dp"
+            android:textStyle="bold" />
 
-        android:layout_above="@+id/listTujuan"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="107dp"
-        android:layout_marginBottom="22dp" />
+        <TextView
+            android:id="@+id/refund_harga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="harga"
+            android:textSize="14sp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true" />
 
-    <TextView
-        android:id="@+id/listTujuan"
-        android:layout_width="247dp"
-        android:layout_height="45dp"
+        <TextView
+            android:id="@+id/refund_tanggal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/refund_harga"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="100dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="28dp"
+            android:text="tanggal"
+            android:textSize="15dp" />
 
-        android:layout_above="@+id/listHarga"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="106dp"
-        android:layout_marginBottom="22dp" />
+        <Button
+            android:id="@+id/refundButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="right"
+            android:layout_marginTop="33dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="276dp"
+            android:text="Refund"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/refund_harga"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/listHarga"
-        android:layout_width="246dp"
-        android:layout_height="40dp"
-
-        android:layout_above="@+id/listTanngal"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="107dp"
-        android:layout_marginBottom="24dp" />
-
-    <TextView
-        android:id="@+id/listTanngal"
-        android:layout_width="248dp"
-        android:layout_height="39dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="104dp"
-        android:layout_marginBottom="191dp" />
+    </RelativeLayout>
 
 
-</RelativeLayout>
+</com.google.android.material.card.MaterialCardView>
