@@ -19,7 +19,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    EditText fullname, email;
+    TextView fullname, email;
     FirebaseAuth fauth;
     FirebaseFirestore fstore;
 
