@@ -8,5 +8,5 @@ Proses :
 4. Book Ticket (100%) 
     - Penambahan get data kalender dan payment
     - Penyempurnaan Booking payment(firebase) dan Payment(home)
-5. Refund (80%)
+5. Refund (100%)
 6. UI (90%)
