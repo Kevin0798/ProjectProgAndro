@@ -34,7 +34,6 @@ public class HomeActivity extends AppCompatActivity {
     String UserId;
 
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

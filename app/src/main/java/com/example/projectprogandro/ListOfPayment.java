@@ -1,70 +1,60 @@
 package com.example.projectprogandro;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
 
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 
 public class ListOfPayment extends AppCompatActivity {
 
-    DatabaseReference databaseReference;
-    DatabaseReference dtbs;
-    ValueEventListener valueEventListener2;
-    ListView listView;
-    ArrayAdapter<String> tampungan;
-    ArrayList<String> arrayList = new ArrayList<>();
+     private FirebaseFirestore db = FirebaseFirestore.getInstance();
+     private CollectionReference penumpangRef = db.collection("Penumpang");
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_of_payment);
-        databaseReference = FirebaseDatabase.getInstance().getReference("UserPayment");
-        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayList);
-        listView = (ListView) findViewById(R.id.listData);
-        listView.setAdapter(arrayAdapter);
+     private PaymentAdapter adapter;
 
-        databaseReference.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                String myChildValues = dataSnapshot.getValue(String.class);
-                arrayList.add(myChildValues);
-                arrayAdapter.notifyDataSetChanged();
-            }
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_list_of_payment);
 
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                arrayAdapter.notifyDataSetChanged();
-            }
+         setUpRecylerView();
+     }
 
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+     private void setUpRecylerView(){
+         Query query = penumpangRef.orderBy("Tanggal",Query.Direction.DESCENDING);
 
-            }
+         FirestoreRecyclerOptions<InfoPenumpang> options = new FirestoreRecyclerOptions.Builder<InfoPenumpang>()
+             .setQuery(query, InfoPenumpang.class)
+             .build();
 
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+         adapter = new PaymentAdapter(options);
+         RecyclerView recyclerView = findViewById(R.id.firestore_list);
+         recyclerView.setHasFixedSize(true);
+         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+         recyclerView.setAdapter(adapter);
+     }
 
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            }
-        });
+     @Override
+     protected void onStart() {
+         super.onStart();
+         adapter.startListening();
+     }
 
-    }
+     @Override
+     protected void onStop() {
+         super.onStop();
+         adapter.stopListening();
+     }
+
 
 }
+

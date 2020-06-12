@@ -60,7 +60,7 @@
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_centerInParent="true"
-                    android:src="@drawable/user" />
+                    app:srcCompat="@drawable/user" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -102,7 +102,7 @@
                     android:layout_height="70dp"
                     android:layout_centerInParent="true"
                     android:layout_gravity="center"
-                    android:src="@drawable/credit" />
+                    app:srcCompat="@drawable/credit" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -153,7 +153,7 @@
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_centerInParent="true"
-                    android:src="@drawable/ticket" />
+                    app:srcCompat="@drawable/ticket" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -194,7 +194,7 @@
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_centerInParent="true"
-                    android:src="@drawable/claim" />
+                    app:srcCompat="@drawable/claim" />
 
                 <TextView
                     android:layout_width="match_parent"
