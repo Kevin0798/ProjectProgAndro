@@ -9,4 +9,4 @@ Proses :
     - Penambahan get data kalender dan payment
     - Penyempurnaan Booking payment(firebase) dan Payment(home)
 5. Refund (80%)
-6. UI (75%)
+6. UI (90%)
