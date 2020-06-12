@@ -23,7 +23,7 @@ public class ListOfPayment extends AppCompatActivity {
      protected void onCreate(Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
          setContentView(R.layout.activity_list_of_payment);
-
+         setTitle("DAFTAR TRANSAKSI");
          setUpRecylerView();
      }
 

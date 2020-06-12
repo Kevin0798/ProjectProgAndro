@@ -50,6 +50,7 @@ public class PaymentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
+        setTitle("TIKET");
 
         TextView textAnak = (TextView)findViewById(R.id.textanak);
         TextView textDewasa = (TextView)findViewById(R.id.textdewasa);
@@ -80,7 +81,7 @@ public class PaymentActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AlertDialog dialog = new AlertDialog.Builder(PaymentActivity.this)
-                        .setTitle("Pembayaran dilakukan dalam waktu 30 menit di atm terdekat")
+                        .setTitle("Silahkan Melakukkan Pembayaran dalam waktu 30 menit")
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {

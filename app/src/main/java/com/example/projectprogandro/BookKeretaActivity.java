@@ -77,6 +77,7 @@ public class BookKeretaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_kereta);
+        setTitle("TIKET");
 
         final String[] dewasa = {"0", "1", "2", "3", "4", "5"};
         final String[] anak = {"0", "1", "2", "3", "4", "5"};
